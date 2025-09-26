@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var Nota1 = parseFloat(prompt("Informe a 1 nota do aluno"));
+    var Nota2 = parseFloat(prompt("Informe a 2 nota do aluno"));
+    var Nota3 = parseFloat(prompt("Informe a 3 nota do aluno"));
+    var Nota4 = parseFloat(prompt("Informe a 4 nota do aluno"));
+    var media = (Nota1 + Nota2 + Nota3 + Nota4) / 4
+    alert("A média é: " + media);
+    //let media = parseInt(prompt("Informe a media"));
+    if (media > 7) {
+       alert("A media é " + media + "\nVocê está aprovado");    
+    } else {
+        alert("A media é " + media + "\nVocê está reprovado");
+    }
+    </script>
+</body>
+</html>

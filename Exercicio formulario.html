@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let contatos = [];
+        function gravar() {
+        let n1 = document.getElementById("n1").value;
+        //let n2 = document.getElementById("n2").value;
+        contatos.push(parseFloat(n1));
+        let result = document.getElementById("resultado");
+        result.innerHTML = saida();
+        document.getElementById("n1").value = "";
+        }
+        function saida() {
+            let retorno = "";
+            for(let i=0; i < contatos.length; i= i + 1) {
+                retorno += contatos[i] + "</br>";
+            }
+            return retorno;
+        }
+        function somatorio() {
+            let retorno = 0;
+            for(let i=0; i < contatos.length; i= i + 1) {
+                retorno += contatos[i];
+            }
+            return retorno;
+        }
+        function media() {
+            let retorno = 0;
+            for(let i=0; i < contatos.length; i= i + 1) {
+                retorno / contatos[i];
+            }
+            return retorno;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div align="center">
+        <input type="number" name="n1" id="n1" />
+ <!--       <input type="number" name="n2" id="n2" />-->
+        <input type="button" value="Gravar"
+            onclick="gravar()" />
+        <input type="button" value="Somatório"
+            onclick="alert(somatorio())" />
+        <input type="button" value="Média"
+            onclick="alert(media())" />
+        </div>
+        <div id="resultado"></div>
+    </form>
+</body>
+</html>

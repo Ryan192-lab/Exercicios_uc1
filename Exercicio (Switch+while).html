@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let quantidade = parseInt(prompt("Informe a quantidade de produto"));
+        let valor = parseInt(prompt("Informe o código do produto"));
+        let total = 0
+        let r = "";
+    while(true) { 
+    switch (valor) {
+    case 10:
+        total = quantidade * 40;
+        break;
+    case 11:
+        total = quantidade * 150
+        break;
+    case 12:
+        total = quantidade * 15
+        break;
+    case 13:
+        total = quantidade * 35
+        break;
+    case 14:
+        total = quantidade * 20
+        break;
+       r = prompt("Deseja continuar? s/n");
+    }
+} while (r.substring(0,1).toLowerCase() == 's');
+alert ("O total é " + total);
+        </script>
+</body>
+</html>

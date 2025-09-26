@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        let n1 = parseInt(prompt("Informe o numero"));
+        let n2 = parseInt(prompt("Informe o numero"));
+        let soma = n1 + n2;
+        alert("A soma é: " + soma);
+        */
+       let n1 = 0; 
+       let n2 = 0;
+       function coletar() {
+          n1 = lerNumero("n1");
+          n2 = lerNumero("n2");       
+       }
+       function lerNumero(campo) {
+          let valor = document.getElementById(campo).value;
+          let numero = valor.replace('.', '');
+          numero = valor.replace('.', ".");
+
+          return parseFloat(numero);
+       }
+       function somar() {
+          coletar();
+          let soma = n1 + n2;
+          //alert("O resultado é: " + soma );
+          //alert();
+          //alert(n2);
+          saida(soma);
+       }
+       function saida(parametro) {
+          let result = document.getElementById("resultado");
+          result.innerHTML = "<p>O resultado é: " + parametro;
+       }
+       function subtrair() {
+        coletar();
+        let soma = n1 - n2;
+        saida(soma);
+       }
+       function multiplicar() {
+        coletar();
+        let soma = n1 * n2;
+        saida(soma);
+       }
+       function dividir() {
+        coletar();
+        let soma = n1 / n2;
+        saida(soma);
+       }
+    </script> 
+</head>
+<body>
+    <form>
+        <input type="number" name="n1" id="n1" />
+        <input type="number" name="n2" id="n2" />
+        <input type="button" value="Soma" 
+            onclick="somar()"/>
+        <input type="button" value="Subtração" 
+            onclick="subtrair()"/>
+        <input type="button" value="Multiplicação" 
+            onclick="multiplicar()"/>
+        <input type="button" value="Divisão" 
+            onclick="dividir()"/>
+
+        <div id="resultado"></div>
+    </form>
+</body>
+</html>
