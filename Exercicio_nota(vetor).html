@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let contatos = [];
+        function cadastrar() {
+            let nome = document.getElementById("nome").value; 
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
+
+            let media = (n1 + n2) / 2;
+            let situacao = "";
+            if (media >= 7) {
+                situacao = "Aprovado";
+            } else {
+                situacao = "Reprovado";
+            }
+            contatos.push( [ nome, n1, n2, media, situacao ] );
+            let result = document.getElementById("resultado");
+           result.innerHTML = saida();
+           document.getElementById("nome").value = "";
+           document.getElementById("n1").value = "";
+           document.getElementById("n2").value = "";
+        }
+        function saida() {
+            let retorno = "";
+            for (let x = 0; x < contatos.length; x = x + 1) {
+                for(let y = 0; y < contatos[x].length; y = y + 1) {
+                    retorno += contatos[x][y] + "     ";
+                }
+                retorno += "</br>";
+            }
+            return retorno;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div align="center">
+         <input type="text" id="nome" name="nome" value="Ryan"
+             placeholder="Informe o nome" />
+        <input type="number" id="n1" name="n1" 
+            placeholder="Informe nota 1" />
+        <input type="number" id="n2" name="n2"  
+            placeholder="Informe nota 2" />
+            <input type="button" value="Gravar"
+            onclick="cadastrar()" />
+        </div>
+        <div id="resultado"></div>
+    </form>
+</body>
+</html>
